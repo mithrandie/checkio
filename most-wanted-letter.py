@@ -2,11 +2,7 @@ import string
 
 
 def checkio(text):
-    letters = [l for l in text.lower() if l in string.ascii_lowercase]
-    counts = {k: letters.count(k) for k in set(letters)}
-    max_count = max(counts.values())
-    max_letters = sorted([k for k, v in counts.items() if v == max_count])
-    return max_letters[0]
+    return max(string.ascii_lowercase, key=text.lower().count)
 
 
 if __name__ == '__main__':
