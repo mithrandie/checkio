@@ -1,11 +1,8 @@
-import string
-
-
 def checkio(data):
     if len(data) < 10\
-            or not any([c in string.digits for c in data])\
-            or not any([c in string.ascii_lowercase for c in data])\
-            or not any([c in string.ascii_uppercase for c in data]):
+            or not any([c.isdigit() for c in data])\
+            or not any([c.islower() for c in data])\
+            or not any([c.isupper() for c in data]):
         return False
 
     return True
