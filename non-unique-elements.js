@@ -1,12 +1,10 @@
 "use strict";
 
 function nonUniqueElements(data) {
-    return data.filter(function(element, index, array){
-        return array.indexOf(element) !== array.lastIndexOf(element)
-    });
+    return data.filter((element) => data.indexOf(element) !== data.lastIndexOf(element));
 }
 
-var assert = require('assert');
+let assert = require('assert');
 
 if (!global.is_checking) {
     assert.deepEqual(nonUniqueElements([1, 2, 3, 1, 3]), [1, 3, 1, 3], "1st example");
