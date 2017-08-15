@@ -1,11 +1,22 @@
 def checkio(data):
-    if len(data) < 10\
-            or not any([c.isdigit() for c in data])\
-            or not any([c.islower() for c in data])\
-            or not any([c.isupper() for c in data]):
+    if len(data) < 10:
         return False
 
-    return True
+    flag = 0
+    for c in data:
+        if flag & 1 == 0 and c.isdigit():
+            flag = flag | 1
+
+        if flag & 2 == 0 and c.islower():
+            flag = flag | 2
+
+        if flag & 4 == 0 and c.isupper():
+            flag = flag | 4
+
+        if flag == 7:
+            break
+
+    return flag == 7
 
 
 if __name__ == '__main__':
