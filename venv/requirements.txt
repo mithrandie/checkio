@@ -1,2 +1,2 @@
 checkio-client==0.1.20
-numpy==1.16.3
+numpy==1.22.0
